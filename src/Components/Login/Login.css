@@ -1,0 +1,30 @@
+.login-page { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    width: 40%;
+}
+
+.page-title {
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 300;
+  font-style: normal;;
+}
+
+.login-input {
+    font-family: "Yantramanav", sans-serif;
+    width: 75%;
+    height: 55px;
+    margin: 25px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: #FDB0E3;
+    font-size: 1.5em;
+}
