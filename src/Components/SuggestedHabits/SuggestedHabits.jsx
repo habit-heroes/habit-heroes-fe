@@ -1,4 +1,4 @@
-export default function TodaysHabits() {
+export default function SuggestedHabits() {
     return (
         <div className='streaks'>
             <ul className='habit-list'>
