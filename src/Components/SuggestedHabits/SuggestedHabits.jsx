@@ -1,3 +1,5 @@
+import './SuggestedHabits.css'
+
 export default function SuggestedHabits() {
     return (
         <div className='suggested-habits'>
