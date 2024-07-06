@@ -1,0 +1,14 @@
+.todays-habits {
+    width: 25%;
+    height: 300px;
+    background-color: #DDF5FC;
+    border: 2px solid black;
+    border-radius: 55px;
+}
+
+.suggested-habit-list {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}
