@@ -1,3 +1,5 @@
+import './Streaks.css'
+
 export default function Streaks() {
     return (
         <div className='streaks'>

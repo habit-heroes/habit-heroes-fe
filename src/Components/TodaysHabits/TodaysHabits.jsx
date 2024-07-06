@@ -1,6 +1,6 @@
 export default function TodaysHabits() {
     return (
-        <div className='streaks'>
+        <div className='todays-habits'>
             <ul className='habit-list'>
                 <li>Habit 1</li>
                 <li>Habit 2</li>
