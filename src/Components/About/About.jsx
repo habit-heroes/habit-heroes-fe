@@ -18,7 +18,7 @@ export default function About() {
                 Mel Langhoff:
                 </p>
                 <p className='about-detail'>
-                Brandon Doza: Hi there! I am a Denver Colorado based software developer. Previously I was a loan officer in the mortgage industry, which taught me to be detail oriented, and focused on clients individual needs. I was drawn to saftware because of my love for builiding things and helping people. I am passionate about making the web accesible to everyone. 
+                Brandon Doza: Hi there! I am a Denver Colorado based software developer. Previously I was a loan officer in the mortgage industry, which taught me to be detail oriented, and focused on clients' individual needs. I was drawn to software because of my love for building things and helping people. I am passionate about making the web accessible to everyone.
                 </p>
         </div>
     )
