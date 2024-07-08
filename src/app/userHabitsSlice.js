@@ -9,6 +9,23 @@ export const fetchUserHabits = createAsyncThunk('userHabits/fetchUserHabits', as
   return data;
 });
 
+export const addUserHabit = createAsyncThunk('userHabits/addUserHabit', async ({ userId, habitId }) => {
+    const response = await fetch(`https://apiurl/users/${userId}/habits`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ habitId }),
+    });
+  
+    if (!response.ok) {
+      throw new Error('Failed to add habit to user');
+    }
+  
+    const data = await response.json();
+    return data;
+  });
+
 const userHabitsSlice = createSlice({
     name: 'userHabits',
     initialState: {
@@ -30,8 +47,20 @@ const userHabitsSlice = createSlice({
         .addCase(fetchUserHabits.rejected, (state, action) => {
           state.loading = false;
           state.error = action.error.message;
-        });
+        })
+        .addCase(addUserHabit.pending, (state) => {
+            state.loading = true;
+            state.error = null;
+          })
+          .addCase(addUserHabit.fulfilled, (state, action) => {
+            state.loading = false;
+            state.userHabits.push(action.payload); 
+          })
+          .addCase(addUserHabit.rejected, (state, action) => {
+            state.loading = false;
+            state.error = action.error.message;
+          });
     },
   });
   
-  export default userHabitsSlice.reducer;
+  export default userHabitsSlice.reducer

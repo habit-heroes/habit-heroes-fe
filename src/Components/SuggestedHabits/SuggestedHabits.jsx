@@ -2,6 +2,7 @@ import './SuggestedHabits.css'
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHabits } from '../../app/habitsSlice';
+import { addUserHabit } from '../../app/userHabitsSlice';
 
 export default function SuggestedHabits() {
   const habits = useSelector((state) => state.habits.habits); //this is where all the habits are acessed. This is the global state
@@ -33,6 +34,7 @@ export default function SuggestedHabits() {
         <div className='suggested-habits'>
             <ul className='habit-list'>
                 {/* {allHabits} */}
+                {/* <button onClick={addUserHabit}>This is for adding a habit</button> */}
                 <li>Habit 1</li>
                 <li>Habit 2</li>
                 <li>Habit 3</li>
