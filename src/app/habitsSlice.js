@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchHabits = createAsyncThunk('habits/fetchHabits', async () => {
-  const response = await fetch('https://apiurl');
+  const response = await fetch('https://apiurl/allHabits');
   if (!response.ok) {
     throw new Error('Failed to fetch habits');
   }
