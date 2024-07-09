@@ -1,14 +1,17 @@
 .streaks {
     width: 25%;
-    height: 300px;
+    height: 500px;
     background-color: #FFE890;
     border: 2px solid black;
     border-radius: 55px;
+
 }
 
 .streak-list {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     grid-template-columns: 1fr 1fr; 
     gap: 10px;
+    list-style-type: none;
 }
