@@ -20,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
+          <Route path="/about" element={<About />} />
         </Routes>
       </div>
     </Router>
