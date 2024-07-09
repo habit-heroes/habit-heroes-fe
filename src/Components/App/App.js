@@ -6,6 +6,7 @@ import Home from '../Home/Home';
 import Header from '../Header/Header'
 import About from '../About/About';
 // import UserHabitCard from '../UserHabitCard/UserHabitCard';
+// import AllHabitCard from '../AllHabitCard/AllHabitCard';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       <div className="App">
         <Header />
         {/* <UserHabitCard /> */}
+        {/* <AllHabitCard /> */}
         <Routes>
           <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
