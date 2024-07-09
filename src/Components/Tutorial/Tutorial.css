@@ -1,0 +1,51 @@
+.tutorial {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+
+.todays-habits-tutorial {
+    width: 25%;
+    height: 300px;
+    background-color: #FDB0E3;
+    border: 2px solid black;
+    border-radius: 55px;
+}
+
+.suggested-habit-list-tutorial {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}
+
+.suggested-habits-tutorial {
+    width: 25%;
+    height: 300px;
+    background-color: #DDF5FC;
+    border: 2px solid black;
+    border-radius: 55px;
+}
+
+.habit-list-tutorial {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}
+
+.streaks-tutorial {
+    width: 25%;
+    height: 300px;
+    background-color: #FFE890;
+    border: 2px solid black;
+    border-radius: 55px;
+}
+
+.streak-list-tutorial {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+}

@@ -18,7 +18,9 @@ export default function Header() {
             </form>
           </li>
           <li>all habits</li>
-          <li>how to use</li>
+          <li>
+            <Link to="/tutorial">How it Works</Link>
+          </li>
           <li>user profile</li>
           <li>
             <Link to="/about">about</Link>
