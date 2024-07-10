@@ -1,29 +1,32 @@
 import './Tutorial.css'
 
-export default function Tutorial({ habits }){
+export default function Tutorial() {
     return (
         <div className='tutorial'>
             <div className='streaks-tutorial'>
                 <ul className='streak-list-tutorial'>
-                    <li>no streaks at this time</li>
+                    <li className='streak-tutorial-div'>
+                        <h1 className='streak-title'>brush teeth</h1>
+                        <h2 className='streak-duration'>16 days</h2>
+                    </li>
                 </ul>
             </div>
             <div className='todays-habits-tutorial'>
                 <ul className='suggested-habit-list-tutorial'>
-                    <div className='user-habit-card-tutorial'>
-                        <h1 className='habit-title'>Title</h1>
+                    <li className='user-habit-card-tutorial'>
+                        <h1 className='habit-title'>title</h1>
                         <h2 className='habit-category'>Category</h2>
                         <button className='habit-buttons'>Done</button>
-                    </div>
+                    </li>
                 </ul>
             </div>
             <div className='suggested-habits-tutorial'>
                 <ul className='habit-list-tutorial'>
-                    <div className='suggested-habit-card'>
+                    <li className='suggested-habit-card'>
                         <h1 className='habit-title'>Title</h1>
                         <h2 className='habit-category'>Category</h2>
                         <button className='habit-buttons'>Add</button>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>

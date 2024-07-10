@@ -5,70 +5,62 @@
     margin-top: 25px;
 }
 
-.todays-habits-tutorial {
+.streaks-tutorial, .todays-habits-tutorial, .suggested-habits-tutorial {
     width: 25%;
     height: 300px;
-    background-color: #FDB0E3;
     border: 2px solid black;
     border-radius: 55px;
-}
-
-.suggested-habit-list-tutorial {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px;
-}
-
-.suggested-habits-tutorial {
-    width: 25%;
-    height: 300px;
-    background-color: #DDF5FC;
-    border: 2px solid black;
-    border-radius: 55px;
-}
-
-.habit-list-tutorial {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr; 
-    gap: 10px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .streaks-tutorial {
-    width: 25%;
-    height: 300px;
     background-color: #FFE890;
-    border: 2px solid black;
-    border-radius: 55px;
 }
 
-.streak-list-tutorial {
+.todays-habits-tutorial {
+    background-color: #FDB0E3;
+}
+
+.suggested-habits-tutorial {
+    background-color: #DDF5FC;
+}
+
+.streak-list-tutorial, .suggested-habit-list-tutorial, .habit-list-tutorial {
     display: flex;
     flex-direction: column;
-    justify-items: center;
-    grid-template-columns: 1fr 1fr; 
+    align-items: center;
     gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
 
-.user-habit-card-tutorial {
+.streak-tutorial-div, .user-habit-card-tutorial, .suggested-habit-card {
     width: 90%;
     height: 50px;
     border: 2px solid black;
     border-radius: 15px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.streak-tutorial-div {
+    background-color: #aae7f8;
+}
+
+.user-habit-card-tutorial {
     background-color: #ffe890;
 }
 
-.habit-title {
-    font-size: smaller;
+.suggested-habit-card {
+    background-color: #FDB0E3;
 }
 
-.habit-category {
+.habit-title, .habit-category, .streak-title, .streak-duration {
     font-size: smaller;
 }
 
