@@ -1,14 +1,16 @@
 import './Streaks.css'
+import StreaksCard from '../StreaksCard/StreaksCard'
+import React from 'react'
 
-export default function Streaks() {
+export default function Streaks({streaks}) {
     return (
         <div className='streaks'>
             <ul className='streak-list'>
-                <li>Streak 1</li>
-                <li>Streak 2</li>
-                <li>Streak 3</li>
-                <li>Streak 4</li>
-                <li>Streak 5</li>
+                {streaks.map((streak, index) => (
+                    <li key={index}>
+                        <StreaksCard streak={streak} />
+                    </li>
+                ))}
             </ul>
         </div>
     )

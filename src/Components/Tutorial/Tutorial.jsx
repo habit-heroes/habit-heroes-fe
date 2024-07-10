@@ -5,11 +5,7 @@ export default function Tutorial({ habits }){
         <div className='tutorial'>
             <div className='streaks-tutorial'>
                 <ul className='streak-list-tutorial'>
-                    <li>Streak 1</li>
-                    <li>Streak 2</li>
-                    <li>Streak 3</li>
-                    <li>Streak 4</li>
-                    <li>Streak 5</li>
+                    <li>no streaks at this time</li>
                 </ul>
             </div>
             <div className='todays-habits-tutorial'>
@@ -23,11 +19,11 @@ export default function Tutorial({ habits }){
             </div>
             <div className='suggested-habits-tutorial'>
                 <ul className='habit-list-tutorial'>
-                    <li>Habit 1</li>
-                    <li>Habit 2</li>
-                    <li>Habit 3</li>
-                    <li>Habit 4</li>
-                    <li>Habit 5</li>
+                    <div className='suggested-habit-card'>
+                        <h1 className='habit-title'>Title</h1>
+                        <h2 className='habit-category'>Category</h2>
+                        <button className='habit-buttons'>Add</button>
+                    </div>
                 </ul>
             </div>
         </div>

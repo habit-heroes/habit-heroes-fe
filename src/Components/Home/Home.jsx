@@ -12,11 +12,16 @@ export default function Home() {
         { title: 'Cook Dinner', category: 'Lifestyle' }
     ];
 
+    const streaks = [
+        {title: 'brush teeth', streak: '4 days'},
+        {title: 'drink water', streak: '16 days'}
+    ]
+
     return (
         <div className='home'>
-            <Streaks />
+            <Streaks streaks={streaks}/>
             <TodaysHabits habits={habits}/>
-            <SuggestedHabits />
+            <SuggestedHabits habits={habits}/>
         </div>
     )
 }
