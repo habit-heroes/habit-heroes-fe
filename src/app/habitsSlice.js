@@ -1,11 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchHabits = createAsyncThunk('habits/fetchHabits', async () => {
-  const response = await fetch('https://apiurl/allHabits');
+  const response = await fetch('https://powerful-scrubland-99007-c4aa236ac7c5.herokuapp.com/api/v1/habits');
   if (!response.ok) {
     throw new Error('Failed to fetch habits');
   }
   const data = await response.json();
+  console.log('datahabits', data)
   return data;
 });
 

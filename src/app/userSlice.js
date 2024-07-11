@@ -1,18 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
-  const response = await fetch('https://apiurl/user/id/');
+  const response = await fetch('https://powerful-scrubland-99007-c4aa236ac7c5.herokuapp.com/api/v1/users/1');
   if (!response.ok) {
     throw new Error('Failed to fetch user');
   }
   const data = await response.json();
+  console.log('userdata', data)
   return data;
 });
 
 const userSlice = createSlice({
     name: 'user',
     initialState: {
-      User: {},
+      user: {},
       loading: false,
       error: null,
     },

@@ -14,6 +14,8 @@ export default function SuggestedHabits() {
     dispatch(fetchHabits());
   }, [dispatch]);
 
+console.log('habits', habits)
+
   if (loading) {
     return <p>Loading habits...</p>;
   }

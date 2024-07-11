@@ -17,10 +17,10 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    if (user && user.id) {
-      dispatch(fetchUserHabits(user.id));
-    }
-  }, [dispatch, user]);
+      dispatch(fetchUserHabits());
+  }, []);
+
+  console.log('user', user)
 
   return (
     <div className="App">
