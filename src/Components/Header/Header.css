@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: #fff4c8;
+    width: 100%;
 }
 
 .header-nav ul {
@@ -16,6 +17,11 @@
 .header-nav li {
     padding-left: 15px;
 }
+
+.header-nav ul li a {
+    text-decoration: none;
+    color: inherit; 
+  }
 
 .search-form {
     display: flex;
@@ -39,4 +45,9 @@
 
   .search-form button:hover {
     background-color: #FDB0E3;
+  }
+
+  .header-left h1 a {
+    text-decoration: none;
+    color: inherit; 
   }
