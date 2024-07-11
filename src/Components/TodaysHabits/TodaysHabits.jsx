@@ -1,9 +1,17 @@
-import './TodaysHabits.css'
-import { useEffect } from 'react';
+
+import React from 'react';
+import UserHabitCard from '../UserHabitCard/UserHabitCard';
+import './TodaysHabits.css';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserHabits } from '../../app/userHabitsSlice';
 
-export default function TodaysHabits() {
+export default function TodaysHabits({ habits }) {
+
+
+
+// export default function TodaysHabits() {
+  // will need to refactor once merged 
     const userHabits = useSelector((state) => state.userHabits.userHabits); 
     const loading = useSelector((state) => state.userHabits.loading);
     const error = useSelector((state) => state.userHabits.error);
@@ -22,13 +30,14 @@ export default function TodaysHabits() {
     }
     return (
         <div className='todays-habits'>
+            <h1>Your Habits</h1>
             <ul className='suggested-habit-list'>
-                <li>Habit 1</li>
-                <li>Habit 2</li>
-                <li>Habit 3</li>
-                <li>Habit 4</li>
-                <li>Habit 5</li>
+                {habits.map((habit, index) => (
+                    <li key={index}>
+                        <UserHabitCard habit={habit} />
+                    </li>
+                ))}
             </ul>
         </div>
-    )
+    );
 }

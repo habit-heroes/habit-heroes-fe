@@ -7,7 +7,7 @@ export default function Login({ onLogin }) {
   const [error, setError] = useState('');
 
   const hardCodedUser = {
-    email: 'grantdavis303@gmail.com',
+    email: 'dummy@gmail.com',
     password: 'dummy123'
   };
 

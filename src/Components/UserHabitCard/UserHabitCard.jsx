@@ -2,12 +2,12 @@ import './UserHabitCard.css'
 
 
 
-export default function UserHabitCard() {
+export default function UserHabitCard({habit}) {
   return (
     <div className='user-habit-card'>
-        <h1 className='habit-title'>Habit Title</h1>
-        <h2 className='habit-category'>Habit Category</h2>
-        <button className='habit-buttons'>Completed</button>
+        <h1 className='habit-title'>{habit.title}</h1>
+        <h2 className='habit-category'>{habit.category}</h2>
+        <button className='habit-buttons'>Done</button>
     </div>
   )
 }

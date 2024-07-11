@@ -1,10 +1,18 @@
 import './SuggestedHabits.css'
+import React from 'react'
+import SuggestedHabitCard from '../SuggestedHabitCard/SuggestedHabitCard'
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHabits } from '../../app/habitsSlice';
 import { addUserHabit } from '../../app/userHabitsSlice';
 
-export default function SuggestedHabits() {
+
+export default function SuggestedHabits({ habits }) {
+
+
+
+// export default function SuggestedHabits() { 
+  // will need to refactor once merged 
   const habits = useSelector((state) => state.habits.habits); //this is where all the habits are acessed. This is the global state
   const loading = useSelector((state) => state.habits.loading);
   const error = useSelector((state) => state.habits.error);
@@ -34,14 +42,13 @@ console.log('habits', habits)
 //      )})
     return (
         <div className='suggested-habits'>
+            <h1>Suggested Habits</h1>
             <ul className='habit-list'>
-                {/* {allHabits} */}
-                {/* <button onClick={addUserHabit}>This is for adding a habit</button> */}
-                <li>Habit 1</li>
-                <li>Habit 2</li>
-                <li>Habit 3</li>
-                <li>Habit 4</li>
-                <li>Habit 5</li>
+                {habits.map((habit, index) => (
+                    <li key={index}>
+                        <SuggestedHabitCard habit={habit} />
+                    </li>
+                ))}
             </ul>
         </div>
     )

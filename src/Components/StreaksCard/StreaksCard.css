@@ -1,4 +1,4 @@
-.user-habit-card {
+.streak-card {
     width: 90%;
     height: 50px;
     border: 2px solid black;
@@ -6,20 +6,13 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #ffe890;
-}
-
-.habit-title {
-    font-size: smaller;
-}
-
-.habit-category {
-    font-size: smaller;
-}
-
-.habit-buttons {
-    width: 25%;
-    height: 35px;
-    border-radius: 15px;
     background-color: #aae7f8;
+}
+
+.streak-title {
+    font-size: smaller;
+}
+
+.streak-duration {
+    font-size: smaller;
 }

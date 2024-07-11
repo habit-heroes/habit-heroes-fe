@@ -1,0 +1,151 @@
+.tutorial {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 25px;
+}
+.tutorial {
+    position: relative;
+}
+
+.streaks-tutorial,
+.todays-habits-tutorial,
+.suggested-habits-tutorial {
+    transition: opacity 0.3s ease;
+}
+
+.dim {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.highlight {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.tutorial-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tutorial-prompt {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    z-index: 11;
+    pointer-events: all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tutorial-prompt button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tutorial-prompt button:hover {
+    background-color: #0056b3;
+}
+
+.suggested-habits-tutorial.highlight,
+.todays-habits-tutorial.highlight,
+.streaks-tutorial.highlight {
+    position: relative;
+    z-index: 11;
+}
+
+
+
+
+
+
+
+
+
+.streaks-tutorial, .todays-habits-tutorial, .suggested-habits-tutorial {
+    width: 25%;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 55px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.streaks-tutorial {
+    background-color: #FFE890;
+}
+
+.todays-habits-tutorial {
+    background-color: #FDB0E3;
+}
+
+.suggested-habits-tutorial {
+    background-color: #DDF5FC;
+}
+
+.streak-list-tutorial, .suggested-habit-list-tutorial, .habit-list-tutorial {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.streak-tutorial-div, .user-habit-card-tutorial, .suggested-habit-card {
+    width: 90%;
+    height: 50px;
+    border: 2px solid black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.streak-tutorial-div {
+    background-color: #aae7f8;
+}
+
+.user-habit-card-tutorial {
+    background-color: #ffe890;
+}
+
+.suggested-habit-card {
+    background-color: #FDB0E3;
+}
+
+.habit-title, .habit-category, .streak-title, .streak-duration {
+    font-size: smaller;
+}
+
+.habit-buttons {
+    width: 25%;
+    height: 35px;
+    border-radius: 15px;
+    background-color: #aae7f8;
+}
