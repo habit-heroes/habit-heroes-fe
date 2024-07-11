@@ -8,12 +8,8 @@ import { addUserHabit } from '../../app/userHabitsSlice';
 
 
 export default function SuggestedHabits() {
-
-
-
-// export default function SuggestedHabits() { 
-  // will need to refactor once merged 
-  const habits = useSelector((state) => state.habits.habits); //this is where all the habits are acessed. This is the global state
+  const habits = useSelector((state) => state.habits.habits); 
+  const userHabits = useSelector((state) => state.userHabits.userHabits); 
   const loading = useSelector((state) => state.habits.loading);
   const error = useSelector((state) => state.habits.error);
   const dispatch = useDispatch();
@@ -21,8 +17,6 @@ export default function SuggestedHabits() {
   useEffect(() => {
     dispatch(fetchHabits());
   }, [dispatch]);
-
-console.log('habits', habits)
 
   if (loading) {
     return <p>Loading habits...</p>;
@@ -32,19 +26,19 @@ console.log('habits', habits)
     return <p>Error: {error}</p>;
   }
 
-  //const allHabits = habits.map(habit => {
-// return (
-//    <HabitCard
-//      key={habit.id}
-//      id={habit.id}
-//      title={habit.title}
-//      etc......
-//      )})
+  const suggestedHabitsToDisplay = habits.data.reduce((habitsDisplayed, habit) => {
+    const isHabitInUserHabits = userHabits.data.some((userHabit) => habit.name === userHabit.name);
+    if (!isHabitInUserHabits) {
+        habitsDisplayed.push(habit);
+    }
+    return habitsDisplayed;
+}, []);
+
     return (
         <div className='suggested-habits'>
             <h1>Suggested Habits</h1>
             <ul className='habit-list'>
-                {habits.data.map((habit, index) => (
+                {suggestedHabitsToDisplay.map((habit, index) => (
                     <li key={index}>
                         <SuggestedHabitCard habit={habit} />
                     </li>
