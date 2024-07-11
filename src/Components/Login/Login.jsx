@@ -14,6 +14,7 @@ export default function Login({ onLogin }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (email === hardCodedUser.email && password === hardCodedUser.password) {
+      localStorage.setItem('isLoggedIn', 'true');
       onLogin(); 
     } else {
       setError('Invalid email or password');

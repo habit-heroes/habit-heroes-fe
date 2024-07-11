@@ -1,11 +1,8 @@
-import './SuggestedHabits.css'
-import React from 'react'
-import SuggestedHabitCard from '../SuggestedHabitCard/SuggestedHabitCard'
-import { useEffect } from 'react';
+import './SuggestedHabits.css';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHabits } from '../../app/habitsSlice';
-import { addUserHabit } from '../../app/userHabitsSlice';
-
+import SuggestedHabitCard from '../SuggestedHabitCard/SuggestedHabitCard';
 
 export default function SuggestedHabits() {
   const habits = useSelector((state) => state.habits.habits); 
@@ -24,6 +21,11 @@ export default function SuggestedHabits() {
 
   if (error) {
     return <p>Error: {error}</p>;
+  }
+
+  // Ensure habits are defined and check if it has the expected structure
+  if (!habits || !habits.data) {
+    return <p>No habits found</p>;
   }
 
   const suggestedHabitsToDisplay = habits.data.reduce((habitsDisplayed, habit) => {
@@ -47,3 +49,4 @@ export default function SuggestedHabits() {
         </div>
     )
 }
+
