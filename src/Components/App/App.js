@@ -24,7 +24,7 @@ function App() {
 
   useEffect(() => {
       dispatch(fetchUserHabits());
-  }, []);
+  }, [dispatch]);
 
   console.log('user', user)
 
