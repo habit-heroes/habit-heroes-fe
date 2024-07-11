@@ -2,11 +2,11 @@
 import React from 'react';
 import UserHabitCard from '../UserHabitCard/UserHabitCard';
 import './TodaysHabits.css';
-
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserHabits } from '../../app/userHabitsSlice';
 
-export default function TodaysHabits({ habits }) {
+export default function TodaysHabits() {
 
 
 
@@ -21,6 +21,8 @@ export default function TodaysHabits({ habits }) {
       dispatch(fetchUserHabits());
     }, [dispatch]);
   
+    console.log(userHabits, 'USER HABITS')
+
     if (loading) {
       return <p>Loading habits...</p>;
     }
@@ -32,9 +34,9 @@ export default function TodaysHabits({ habits }) {
         <div className='todays-habits'>
             <h1>Your Habits</h1>
             <ul className='suggested-habit-list'>
-                {habits.map((habit, index) => (
+                {userHabits.data.map((userHabit, index) => (
                     <li key={index}>
-                        <UserHabitCard habit={habit} />
+                        <UserHabitCard userHabit={userHabit} />
                     </li>
                 ))}
             </ul>
