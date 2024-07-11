@@ -7,7 +7,7 @@ import { fetchHabits } from '../../app/habitsSlice';
 import { addUserHabit } from '../../app/userHabitsSlice';
 
 
-export default function SuggestedHabits({ habits }) {
+export default function SuggestedHabits() {
 
 
 
@@ -44,7 +44,7 @@ console.log('habits', habits)
         <div className='suggested-habits'>
             <h1>Suggested Habits</h1>
             <ul className='habit-list'>
-                {habits.map((habit, index) => (
+                {habits.data.map((habit, index) => (
                     <li key={index}>
                         <SuggestedHabitCard habit={habit} />
                     </li>
