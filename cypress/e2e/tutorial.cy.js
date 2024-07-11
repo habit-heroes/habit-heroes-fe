@@ -54,29 +54,24 @@ describe('Tutorial Page', () => {
       win.localStorage.setItem('isLoggedIn', 'false');
     });
 
-    // Tutorial step 1: Add a suggested habit
     cy.contains('Add').click();
     cy.contains('Done').click();
     cy.contains('Done').click();
 
-    // Ensure we are redirected to the login page
     cy.url().should('include', '/login');
   });
 
   it('should redirect to the dashboard if the user is logged in', () => {
     navigateToTutorial();
 
-    // Simulate the user being logged in
     cy.window().then((win) => {
       win.localStorage.setItem('isLoggedIn', 'true');
     });
 
-    // Tutorial step 1: Add a suggested habit
     cy.contains('Add').click();
     cy.contains('Done').click();
     cy.contains('Done').click();
 
-    // Ensure we are redirected to the dashboard
     cy.url().should('include', '/');
   });
 });
