@@ -11,19 +11,21 @@ export default function Header() {
       </div>
       <nav className='header-nav'>
         <ul>
-          <li>
+          {/* <li>
             <form className='search-form'>
               <input type='text' placeholder='search...' />
               <button type='submit'>find habits</button>
             </form>
-          </li>
-          <li>all habits</li>
+          </li> */}
+          {/* <li>All Habits</li> */}
           <li>
             <Link to="/tutorial">How it Works</Link>
           </li>
-          <li>user profile</li>
+          {/* <li>
+            <Link to="/">User Profile</Link>
+          </li> */}
           <li>
-            <Link to="/about">about</Link>
+            <Link to="/about">About</Link>
           </li>
         </ul>
       </nav>
