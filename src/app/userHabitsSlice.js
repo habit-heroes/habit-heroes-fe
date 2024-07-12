@@ -1,21 +1,27 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { useSelector } from 'react-redux';
 
 export const fetchUserHabits = createAsyncThunk('userHabits/fetchUserHabits', async (userId) => {
-  const response = await fetch('https://powerful-scrubland-99007-c4aa236ac7c5.herokuapp.com/api/v1/users/1/habits');
+  const response = await fetch(`https://powerful-scrubland-99007-c4aa236ac7c5.herokuapp.com/api/v1/users/${userId}/habits`);
   if (!response.ok) {
     throw new Error('Failed to fetch your habits');
   }
   const data = await response.json();
-  return data;
+  return data.data;
 });
 
-export const addUserHabit = createAsyncThunk('userHabits/addUserHabit', async ({ userId, habitId }) => {
-    const response = await fetch(`https://apiurl/users/${userId}/habits`, {
+export const addUserHabit = createAsyncThunk('userHabits/addUserHabit', async (userId, habitId) => {
+    const response = await fetch(`https://powerful-scrubland-99007-c4aa236ac7c5.herokuapp.com/api/v1/users/${userId}/habits`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ habitId }),
+      body: JSON.stringify(
+        {
+            "user_id": userId,
+            "habit_id": habitId
+          }
+      ),
     });
   
     if (!response.ok) {
@@ -23,13 +29,13 @@ export const addUserHabit = createAsyncThunk('userHabits/addUserHabit', async ({
     }
   
     const data = await response.json();
-    return data;
+    return data.data;
   });
 
 const userHabitsSlice = createSlice({
     name: 'userHabits',
     initialState: {
-      UserHabits: [],
+      userHabits:[],
       loading: false,
       error: null,
     },
@@ -54,7 +60,11 @@ const userHabitsSlice = createSlice({
           })
           .addCase(addUserHabit.fulfilled, (state, action) => {
             state.loading = false;
-            state.userHabits.push(action.payload); 
+            if (Array.isArray(state.userHabits)) {
+                state.userHabits.push(action.payload);
+              } else {
+                console.error('userHabits is not an array:', state.userHabits);
+              }
           })
           .addCase(addUserHabit.rejected, (state, action) => {
             state.loading = false;

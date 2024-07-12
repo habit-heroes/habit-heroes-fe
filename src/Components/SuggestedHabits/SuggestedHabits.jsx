@@ -23,13 +23,12 @@ export default function SuggestedHabits() {
     return <p>Error: {error}</p>;
   }
 
-  // Ensure habits are defined and check if it has the expected structure
   if (!habits || !habits.data) {
     return <p>No habits found</p>;
   }
 
   const suggestedHabitsToDisplay = habits.data.reduce((habitsDisplayed, habit) => {
-    const isHabitInUserHabits = userHabits.data.some((userHabit) => habit.name === userHabit.name);
+    const isHabitInUserHabits = userHabits.some((userHabit) => habit.name === userHabit.name);
     if (!isHabitInUserHabits) {
         habitsDisplayed.push(habit);
     }

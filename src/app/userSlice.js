@@ -6,8 +6,7 @@ export const fetchUser = createAsyncThunk('user/fetchUser', async () => {
     throw new Error('Failed to fetch user');
   }
   const data = await response.json();
-  console.log('userdata', data)
-  return data;
+  return data.data;
 });
 
 const userSlice = createSlice({

@@ -18,10 +18,8 @@ export default function TodaysHabits() {
     const dispatch = useDispatch();
   
     useEffect(() => {
-      dispatch(fetchUserHabits());
+      dispatch(fetchUserHabits(1));
     }, [dispatch]);
-  
-    console.log(userHabits, 'USER HABITS')
 
     if (loading) {
       return <p>Loading habits...</p>;
@@ -34,7 +32,7 @@ export default function TodaysHabits() {
         <div className='todays-habits'>
             <h1>Your Habits</h1>
             <ul className='suggested-habit-list'>
-                {userHabits.data.map((userHabit, index) => (
+                {userHabits.map((userHabit, index) => (
                     <li key={index}>
                         <UserHabitCard userHabit={userHabit} />
                     </li>
