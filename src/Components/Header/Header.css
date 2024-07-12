@@ -23,19 +23,8 @@
     color: inherit; 
   }
 
-.search-form {
-    display: flex;
-    align-items: center;
-}
 
-.search-form input[type="text"]{
-    padding: 5px;
-    margin-right: 5px;
-    border: 1px solid #FDB0E3;
-    border-radius: 3px;
-}
-
-.search-form button {
+button {
     padding: 5px 10px;
     border: 1px solid #FDB0E3;
     border-radius: 3px;
@@ -43,7 +32,7 @@
     cursor: pointer;
   }
 
-  .search-form button:hover {
+button:hover {
     background-color: #FDB0E3;
   }
 
