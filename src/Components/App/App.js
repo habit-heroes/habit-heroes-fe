@@ -14,13 +14,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useDispatch();
   // const user = useSelector((state) => state.user.user);
-
+  const userHabits = useSelector((state) => state.userHabits.userHabits)
+  
   useEffect(() => {
-    dispatch(fetchUser());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchUserHabits());
+    dispatch(fetchUser(1));
   }, [dispatch]);
 
   useEffect(() => {
@@ -30,12 +27,18 @@ function App() {
 
   const handleLogin = () => {
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', 'false');
   };
 
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <Routes>
           <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
