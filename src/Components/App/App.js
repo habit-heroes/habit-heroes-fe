@@ -28,16 +28,20 @@ function App() {
     setIsLoggedIn(loggedIn);
   }, []);
 
-  console.log('user', user);
-
   const handleLogin = () => {
     setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    localStorage.setItem('isLoggedIn', 'false');
   };
 
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header isLoggedIn={isLoggedIn} onLogout={handleLogout} />
         <Routes>
           <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />

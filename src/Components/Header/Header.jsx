@@ -1,7 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ isLoggedIn, onLogout }) {
   return (
     <header className='header'>
       <div className='header-left'>
@@ -11,22 +11,17 @@ export default function Header() {
       </div>
       <nav className='header-nav'>
         <ul>
-          {/* <li>
-            <form className='search-form'>
-              <input type='text' placeholder='search...' />
-              <button type='submit'>find habits</button>
-            </form>
-          </li> */}
-          {/* <li>All Habits</li> */}
           <li>
             <Link to="/tutorial">How it Works</Link>
           </li>
-          {/* <li>
-            <Link to="/">User Profile</Link>
-          </li> */}
           <li>
             <Link to="/about">About</Link>
           </li>
+          {isLoggedIn && (
+            <li>
+              <button onClick={onLogout}>Logout</button>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
