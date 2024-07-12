@@ -13,8 +13,9 @@ import { useSelector, useDispatch } from 'react-redux';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
+  // const user = useSelector((state) => state.user.user);
   const userHabits = useSelector((state) => state.userHabits.userHabits)
+  
   useEffect(() => {
     dispatch(fetchUser(1));
   }, [dispatch]);

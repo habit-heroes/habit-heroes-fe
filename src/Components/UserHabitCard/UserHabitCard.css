@@ -23,3 +23,9 @@
     border-radius: 15px;
     background-color: #aae7f8;
 }
+
+.times-done, .count {
+    font-size: smaller;
+    margin: 0;
+    padding: 0
+}
