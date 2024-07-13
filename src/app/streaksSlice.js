@@ -9,8 +9,10 @@ export const updateUserHabit = async (userId, habitId) => {
         body: JSON.stringify({
             user_habit_id: habitId
         }),
-      })};
-
+      })
+      console.log(response)
+    };
+      
 export const fetchUserStreaks = createAsyncThunk(
     'streaks/fetchUserStreaks',
     async (userId) => {
