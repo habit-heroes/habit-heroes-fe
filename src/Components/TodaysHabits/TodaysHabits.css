@@ -4,6 +4,7 @@
     background-color: #FDB0E3;
     border: 2px solid black;
     border-radius: 55px;
+    overflow-y: auto;
 }
 
 .suggested-habit-list {
