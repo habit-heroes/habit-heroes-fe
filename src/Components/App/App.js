@@ -13,21 +13,27 @@ import { useSelector, useDispatch } from 'react-redux';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useDispatch();
-  // const user = useSelector((state) => state.user.user);
-  const userHabits = useSelector((state) => state.userHabits.userHabits)
-  
-  useEffect(() => {
-    dispatch(fetchUser(1));
-  }, [dispatch]);
+  const user = useSelector((state) => state.user.user);
+  const userHabits = useSelector((state) => state.userHabits.userHabits);
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
     setIsLoggedIn(loggedIn);
-  }, []);
+    if (loggedIn) {
+      dispatch(fetchUser(1));
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isLoggedIn && user) {
+      dispatch(fetchUserHabits(user.id));
+    }
+  }, [dispatch, isLoggedIn, user]);
 
   const handleLogin = () => {
     setIsLoggedIn(true);
     localStorage.setItem('isLoggedIn', 'true');
+    dispatch(fetchUser(1));
   };
 
   const handleLogout = () => {
@@ -43,7 +49,7 @@ function App() {
           <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <Login onLogin={handleLogin} />} />
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
           <Route path="/about" element={<About />} />
-          <Route path="/tutorial" element={<Tutorial isLoggedIn={isLoggedIn} />} />
+          <Route path="/tutorial" element={isLoggedIn ? <Tutorial /> : <Navigate to="/login" />} />
         </Routes>
       </div>
     </Router>
