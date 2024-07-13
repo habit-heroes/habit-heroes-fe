@@ -1,18 +1,37 @@
 import './Streaks.css'
 import StreaksCard from '../StreaksCard/StreaksCard'
 import React from 'react'
+import { useEffect } from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { fetchUserStreaks } from "../../app/streaksSlice"
 
-export default function Streaks({streaks}) {
+export default function Streaks() {
+    const streaks = useSelector((state) => state.streaks.streaks)
+    const user = useSelector((state) => state.user.user);
+    const dispatch = useDispatch()
+console.log('STREAKS', streaks.data)
+console.log('USER', user)
+
+    useEffect(() => {
+        if (user && user.id) {
+            dispatch(fetchUserStreaks(user.id));
+        }
+    }, [dispatch, user])
+
     return (
-        <div className='streaks'>
-            <h1>Streaks</h1>
-            <ul className='streak-list'>
-                {streaks.map((streak, index) => (
-                    <li key={index}>
-                        <StreaksCard streak={streak} />
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
-}
+      <div className="streaks">
+        <h1>Streaks</h1>
+        <ul className="streak-list">
+          {streaks.data && streaks.data.length > 0 ? (
+            streaks.data.map((streak, index) => (
+              <li className='streak-li' key={index}>
+                <StreaksCard streak={streak} />
+              </li>
+            ))
+          ) : (
+            <p>No streaks yet</p>
+          )}
+        </ul>
+      </div>
+    );
+  }
