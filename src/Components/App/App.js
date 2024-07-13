@@ -15,7 +15,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
-  const userHabits = useSelector((state) => state.userHabits.userHabits);
+  // const userHabits = useSelector((state) => state.userHabits.userHabits);
 
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn') === 'true';

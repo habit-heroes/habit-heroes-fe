@@ -1,6 +1,6 @@
 import './UserHabitCard.css';
-import { useState } from 'react';
-import { fetchUserHabits } from '../../app/userHabitsSlice';
+//import { useState } from 'react';
+//import { fetchUserHabits } from '../../app/userHabitsSlice';
 import { fetchUserStreaks, updateUserHabit } from '../../app/streaksSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
