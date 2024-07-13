@@ -4,6 +4,7 @@ import './App.css';
 import Login from '../Login/Login';
 import Home from '../Home/Home';
 import Header from '../Header/Header';
+import Error from '../Error/Error';
 import About from '../About/About';
 import Tutorial from '../Tutorial/Tutorial';
 import { fetchUser } from '../../app/userSlice';
@@ -50,6 +51,7 @@ function App() {
           <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/login" />} />
           <Route path="/about" element={<About />} />
           <Route path="/tutorial" element={isLoggedIn ? <Tutorial /> : <Navigate to="/login" />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
       </div>
     </Router>

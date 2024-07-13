@@ -16,9 +16,6 @@ export default function About() {
                 Grant Davis: Hi everyone, I’m Grant and I live in Colorado! Before I started my professional journey in tech, I worked as the Marketing Coordinator for a non-profit. I really enjoy working with databases and managing the logic that helps make applications simple and easy-to-use.
                 </p>
                 <p className='about-detail'>
-                Mel Langhoff:
-                </p>
-                <p className='about-detail'>
                 Brandon Doza: Hi there! I am a Denver Colorado based software developer. Previously I was a loan officer in the mortgage industry, which taught me to be detail oriented, and focused on clients' individual needs. I was drawn to software because of my love for building things and helping people. I am passionate about making the web accessible to everyone.
                 </p>
         </div>
