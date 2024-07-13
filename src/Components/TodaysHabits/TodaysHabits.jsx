@@ -7,11 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUserHabits } from '../../app/userHabitsSlice';
 
 export default function TodaysHabits() {
-
-
-
-// export default function TodaysHabits() {
-  // will need to refactor once merged 
     const userHabits = useSelector((state) => state.userHabits.userHabits); 
     const loading = useSelector((state) => state.userHabits.loading);
     const error = useSelector((state) => state.userHabits.error);

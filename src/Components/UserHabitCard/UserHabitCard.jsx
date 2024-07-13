@@ -7,15 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 export default function UserHabitCard({ userHabit }) {
   const dispatch = useDispatch()
   const user = useSelector((state) => state.user.user);
-  // const [counter, setCounter] = useState(0);
-
-  // function incrementCounter() {
-  //   setCounter((prevCounter) => prevCounter + 1);
-  // }
 
   function handleDoneClick() {
     updateUserHabit(user.id, userHabit.id);
-    // dispatch(fetchUserHabits(user.id))
     dispatch(fetchUserStreaks(user.id))
   }
 
@@ -25,10 +19,6 @@ export default function UserHabitCard({ userHabit }) {
       {/* Uncomment if the category is needed */}
       {/* <h2 className='habit-category'>{userHabit.category}</h2> */}
       <button className='habit-buttons' onClick={handleDoneClick}>Done</button>
-      {/* <div className='counter'>
-        <p className='times-done'>Times Done</p>
-        <p className='count'>{userHabit.times_completed}</p>
-      </div> */}
     </div>
   );
 }

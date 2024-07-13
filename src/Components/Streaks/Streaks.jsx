@@ -9,14 +9,22 @@ export default function Streaks() {
     const streaks = useSelector((state) => state.streaks.streaks)
     const user = useSelector((state) => state.user.user);
     const dispatch = useDispatch()
-console.log('STREAKS', streaks.data)
-console.log('USER', user)
+    const loading = useSelector((state) => state.streaks.loading);
+  const error = useSelector((state) => state.streaks.error);
 
     useEffect(() => {
         if (user && user.id) {
             dispatch(fetchUserStreaks(user.id));
         }
     }, [dispatch, user])
+
+    if (loading) {
+        return <p>Loading Streaks...</p>;
+      }
+    
+      if (error) {
+        return <p>Error: {error}</p>;
+      }
 
     return (
       <div className="streaks">
