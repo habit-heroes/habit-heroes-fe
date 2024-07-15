@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Habit Hero
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview: 
+This application is designed to assist individuals that would like to keep track of their daily habits. The application was created with all people in mind, whether they know what habits they would like to track, or if they're not quite sure what they should track, they can add suggested ones. 
 
-## Available Scripts
+## Features:
+- Personalized user experience: Users can choose which habits they would like to track to meet theor goals.
+- How to use: Users can view a tutorial page that walks them how to use the app.
+- Marking a habit as done: Users can mark habits done as they complete them throughout the day.
+- Streaks: As a user tracks their habit, they will achieve streaks when they have met a times done goal with their habit. This allows users to track their achievements.
 
-In the project directory, you can run:
+## Deployed Site:
+Please visit Habit Hero at
+https://main--habithero2401.netlify.app/
 
-### `npm start`
+  ### Installation: 
+- git clone  git@github.com:habit-heroes/habit-heroes-fe.git - for ssh
+- cd habit-heroes-fe
+- npm install
+- npm start
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### API
+- This project uses the habit-heroes-be Api 
+- Habit Heroes Organization https://github.com/habit-heroes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Wins:
+- Reaching our MVP while learning Redux Toolkit.
+- Planning out a greenfield project with a back end team.
+- Working with a backend team to produce a working and deployed project. 
 
-### `npm test`
+### Challenges:
+- Working with a smaller team that forced us to strip down or MVP to work within the time constraints we had.
+- Redux Toolkit was a challenge to learn and make work within our MVP. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Credits: 
+- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- WireFrame desinged on Miro https://miro.com/app/board/uXjVK2XWIIU=/?share_link_id=715861996566
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Contact: 
+Brandon Doza
+- https://www.linkedin.com/in/brandon-doza/
+- brandonjamesdoza@gmail.com
